@@ -13,7 +13,8 @@ namespace Microsoft.Framework.DependencyInjection.Tests.Fakes
 
         public CreationCountFakeService(IFakeService dependency)
         {
-            _instanceId = Interlocked.Increment(ref _instanceCount);
+            _instanceCount++;
+            _instanceId = _instanceCount;
         }
 
         public static int InstanceCount
